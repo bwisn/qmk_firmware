@@ -4,12 +4,13 @@
 #include "config.h"
 
 enum anne_pro_layers {
-  _BASE_LAYER,
-  _FN1_LAYER,
-  _FN2_LAYER,
-  _FN3_LAYER,
+    _BASE_LAYER,
+    _FN1_LAYER,
+    _FN2_LAYER,
+    _FN3_LAYER,
 };
 
+// clang-format off
 // #define CAPS_LOCATION (MATRIX_COLS * 2 + 0)
 
 	// Key symbols are based on QMK. Use them to remap your keyboard
@@ -124,25 +125,20 @@ enum anne_pro_layers {
  
 
 };
+// clang-format on
 const uint16_t keymaps_size = sizeof(keymaps);
 
+void matrix_init_user(void) {}
 
-void matrix_init_user(void) {
+void matrix_scan_user(void) {}
 
-}
-
-void matrix_scan_user(void) {
-}
-
-layer_state_t layer_state_set_user(layer_state_t layer) {
-    return layer;
-}
+layer_state_t layer_state_set_user(layer_state_t layer) { return layer; }
 
 bool led_update_user(led_t leds) {
-  if (leds.caps_lock) {
-    //annepro2LedSetMask(CAPS_LOCATION);
-  } else {
-    //annepro2LedClearMask(CAPS_LOCATION);
-  }
-  return true;
+    if (leds.caps_lock) {
+        // annepro2LedSetMask(CAPS_LOCATION);
+    } else {
+        // annepro2LedClearMask(CAPS_LOCATION);
+    }
+    return true;
 }
