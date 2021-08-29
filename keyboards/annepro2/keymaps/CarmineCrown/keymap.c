@@ -140,9 +140,9 @@ layer_state_t layer_state_set_user(layer_state_t layer) {
 
 bool led_update_user(led_t leds) {
   if (leds.caps_lock) {
-    annepro2LedSetMask(CAPS_LOCATION);
+    //annepro2LedSetMask(CAPS_LOCATION);
   } else {
-    annepro2LedClearMask(CAPS_LOCATION);
+    //annepro2LedClearMask(CAPS_LOCATION);
   }
   return true;
 }
